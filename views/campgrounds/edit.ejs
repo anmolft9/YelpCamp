@@ -1,0 +1,56 @@
+<%- include('../partials/header') %>
+
+<form action="/campgrounds/<%= foundID._id %>?_method=PUT" method="POST">
+    
+
+    <div class="container">
+    
+        <div class="row">
+            <div style="text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                <h1>Editing "<%=foundID.name%>" </h1>
+            </div>
+            <div style="width:30%; margin: 30 auto;">
+    
+                <form action="/campgrounds" method="POST">
+    
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="campground[name]" value="<%= foundID.name%>">
+                    </div>
+    
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="campground[image]" value="<%= foundID.image%>">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="form-control" type="number" name="campground[price]" placeholder="price" value="<%= foundID.price%>" min="0.01" step="0.01">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input class="form-control" type="text" name="location" id="campground[location]" value="<%= foundID.location%>"">
+                    </div>
+    
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="campground[description]" value="<%= foundID.description%>">
+                    </div>
+    
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">SUBMIT</button>
+                    </div>
+    
+    
+                </form>
+                <a href="/campgrounds/<%= foundID._id %>">Go back</a>
+            </div>
+    
+    
+    
+        </div>
+    
+    
+    
+    </div>  
+
+</form>
+
+<%- include ('../partials/footer') %>

@@ -1,0 +1,38 @@
+<%- include('../partials/header') %>
+
+
+<div class="container">
+
+    <div class="row">
+        <div style="text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            <h1>editing the comment </h1>
+        </div>
+        <div style="width:30%; margin: 30 auto;">
+        
+
+            <form action="/campgrounds/<%= foundCampground._id %>/comments/<%= foundComment._id %>?_method=PUT" method="POST">
+
+                <div class="form-group">
+                    
+                    <input class="form-control" type="text" name="comment[text]" value="<%= foundComment.text %>">
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">SUBMIT</button>
+                </div>
+
+
+            </form>
+            <a href="/campgrounds">Go back</a>
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+<%- include ('../partials/footer') %>
